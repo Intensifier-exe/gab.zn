@@ -143,7 +143,7 @@ export async function createInitialHelpMenu(client) {
     );
 
     embed.setFooter({ 
-        text: "Made by gab.zn" 
+        text: "Made by gab.zn 🥷🏻" 
     });
     embed.setTimestamp();
 
