@@ -25,9 +25,9 @@ export const botConfig = {
     activities: [
       {
         // Text users will see (example: "Playing /help | Titan Bot").
-        name: "Made by gab.zn",
+        name: "Made by gab.zn 🥷🏻",
         // Activity type number (0 = Playing).
-        type: 0, 
+        type: 3, 
       },
     ],
   },
@@ -58,7 +58,7 @@ export const botConfig = {
     defaultQuestions: [
       { question: "What is your name?", required: true },
       { question: "How old are you?", required: true },
-      { question: "Why do you want to join?", required: true },
+      { question: "Why do you want to join the management team?", required: true },
     ],
 
     // Embed colors by application status.
@@ -88,8 +88,8 @@ export const botConfig = {
   embeds: {
     colors: {
       // Main brand colors.
-      primary: "#336699", 
-      secondary: "#2F3136", 
+      primary: "#FFC0CB", 
+      secondary: "#cc00ff", 
 
       // Standard status colors for success/error/warning/info messages.
       success: "#57F287", 
