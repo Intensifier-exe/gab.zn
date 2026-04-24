@@ -1,7 +1,7 @@
 {
-  "name": "titanbot-custom",
+  "name": "gab.zn",
   "version": "2.0.0",
-  "description": "Modular Ultimate Community Bot by Touchpoint Support",
+  "description": "the 2nd version of gab.zn's creation",
   "main": "src/app.js",
   "type": "module",
   "scripts": {
