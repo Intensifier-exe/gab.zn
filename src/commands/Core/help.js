@@ -1,4 +1,4 @@
-﻿import {
+import {
     SlashCommandBuilder,
     ActionRowBuilder,
     ButtonBuilder,
@@ -18,7 +18,6 @@ const __dirname = path.dirname(__filename);
 
 const CATEGORY_SELECT_ID = "help-category-select";
 const ALL_COMMANDS_ID = "help-all-commands";
-const BUG_REPORT_BUTTON_ID = "help-bug-report";
 const HELP_MENU_TIMEOUT_MS = 5 * 60 * 1000;
 
 const CATEGORY_ICONS = {
@@ -39,10 +38,6 @@ const CATEGORY_ICONS = {
     Birthday: "🎂",
     Config: "⚙️",
 };
-
-
-
-
 
 export async function createInitialHelpMenu(client) {
     const commandsPath = path.join(__dirname, "../../commands");
@@ -141,16 +136,6 @@ export async function createInitialHelpMenu(client) {
             inline: true
         },
         {
-            name: "🎭 **Reaction Roles**",
-            value: "Self-assignable roles using reaction-role systems",
-            inline: true
-        },
-        {
-            name: "✅ **Verification**",
-            value: "Member verification workflows and access gating",
-            inline: true
-        },
-        {
             name: "🔧 **Utilities**",
             value: "Useful tools and server utilities",
             inline: true
@@ -158,24 +143,9 @@ export async function createInitialHelpMenu(client) {
     );
 
     embed.setFooter({ 
-        text: "Made with ❤️" 
+        text: "Made by gab.zn" 
     });
     embed.setTimestamp();
-
-    const bugReportButton = new ButtonBuilder()
-        .setCustomId(BUG_REPORT_BUTTON_ID)
-        .setLabel("Report Bug")
-        .setStyle(ButtonStyle.Danger);
-
-    const supportButton = new ButtonBuilder()
-        .setLabel("Support Server")
-        .setURL("https://discord.gg/QnWNz2dKCE")
-        .setStyle(ButtonStyle.Link);
-
-    const touchpointButton = new ButtonBuilder()
-        .setLabel("Learn from Touchpoint")
-        .setURL("https://www.youtube.com/@TouchDisc")
-        .setStyle(ButtonStyle.Link);
 
     const selectRow = createSelectMenu(
         CATEGORY_SELECT_ID,
@@ -183,15 +153,9 @@ export async function createInitialHelpMenu(client) {
         options,
     );
 
-    const buttonRow = new ActionRowBuilder().addComponents([
-        bugReportButton,
-        supportButton,
-        touchpointButton,
-    ]);
-
     return {
         embeds: [embed],
-        components: [buttonRow, selectRow],
+        components: [selectRow],
     };
 }
 
@@ -230,5 +194,3 @@ export default {
         }, HELP_MENU_TIMEOUT_MS);
     },
 };
-
-
